@@ -12,7 +12,6 @@ df = pd.read_csv('london_bikes.csv')
 
 # area plot
 df['start_day'] = pd.to_datetime(df['start_date']).dt.date
-df['start_wod'] = pd.to_datetime(df['start_date']).dt.weekday_name
 df_trips_by_day = df['start_day'].value_counts()
 st.area_chart(df_trips_by_day)
 
